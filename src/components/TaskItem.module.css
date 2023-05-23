@@ -1,0 +1,66 @@
+.task {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  gap: 12px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--gray-100);
+  margin-bottom: 0.75rem;
+}
+
+.task p {
+  flex: 1;
+}
+
+.task:has(input[type="checkbox"]:checked) {
+  border: 0;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+
+.check:hover {
+  border-color: var(--blue-dark);
+}
+
+input[type="checkbox"] {
+  display: none;
+  transition: all 0.4s;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+  transition: all 0.4s;
+}
+
+input[type="checkbox"]:checked + label:hover {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+input[type="checkbox"]:checked ~ p {
+  text-decoration: line-through;
+  color: var(--gray-300);
+  transition: all 0.4s;
+}
+
+.delete {
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--gray-300);
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: var(--gray-400);
+  color: var(--red-500);
+}
